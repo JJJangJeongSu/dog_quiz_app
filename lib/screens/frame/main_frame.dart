@@ -1,6 +1,7 @@
 import 'package:dog_quiz_app/screens/quiz_screen.dart';
 import 'package:dog_quiz_app/screens/result_screen.dart';
 import 'package:dog_quiz_app/screens/title_screen.dart';
+import 'package:dog_quiz_app/models/question_set.dart';
 import 'package:flutter/material.dart';
 
 class MainFrame extends StatefulWidget {
@@ -13,10 +14,21 @@ class _MainFrameState extends State<MainFrame> {
   Map<String, Widget>? screens;
   Widget? activeScreen;
   String? screenCode;
+  late int curNum;
+  dynamic curQuestionSet;
+  late List<String> userAnswers;
 
   void startQuiz() {
     setState(() {
+      curQuestionSet = QuestionSet();
       screenCode = 'quiz-screen';
+      userAnswers = [];
+    });
+  }
+
+  void chooseAnswer() {
+    setState(() {
+      curNum += 1;
     });
   }
 
@@ -25,6 +37,7 @@ class _MainFrameState extends State<MainFrame> {
     super.initState();
     // screenCode = 'title-screen';
     // activeScreen = TitleScreen(startQuiz: startQuiz);
+    curNum = 1;
     screenCode = 'title-screen';
     activeScreen = TitleScreen(
       startQuiz: startQuiz,

@@ -1,10 +1,10 @@
 name: dog_quiz_app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.2.3 <4.0.0"
 
 dependencies:
   flutter:
@@ -20,22 +20,22 @@ flutter:
   uses-material-design: true
 
   assets:
-    - 'lib/assets/images/logo/dog.png'
-    - 'lib/assets/images/quiz/beagle/beagle_1.jpg'
-    - 'lib/assets/images/quiz/beagle/beagle_2.jpg'
-    - 'lib/assets/images/quiz/beagle/beagle_3.jpg'
-    - 'lib/assets/images/quiz/chihuahua/chihuahua_1.jpg'
-    - 'lib/assets/images/quiz/chihuahua/chihuahua_2.jpg'
-    - 'lib/assets/images/quiz/chihuahua/chihuahua_3.jpg'
-    - 'lib/assets/images/quiz/dachshound/dachshound_1.jpg'
-    - 'lib/assets/images/quiz/dachshound/dachshound_2.jpg'
-    - 'lib/assets/images/quiz/dachshound/dachshound_3.jpg'
-    - 'lib/assets/images/quiz/maltese/maltese_1.jpg'
-    - 'lib/assets/images/quiz/maltese/maltese_2.jpg'
-    - 'lib/assets/images/quiz/maltese/maltese_3.jpg'
-    - 'lib/assets/images/quiz/papillon/papillon_1.jpg'
-    - 'lib/assets/images/quiz/papillon/papillon_2.jpg'
-    - 'lib/assets/images/quiz/papillon/papillon_3.jpg'
-    - 'lib/assets/images/quiz/poodle/poodle_1.jpg'
-    - 'lib/assets/images/quiz/poodle/poodle_2.jpg'
-    - 'lib/assets/images/quiz/poodle/poodle_3.jpg'
+    - "lib/assets/images/logo/dog.png"
+    - "lib/assets/images/quiz/beagle/beagle_1.jpg"
+    - "lib/assets/images/quiz/beagle/beagle_2.jpg"
+    - "lib/assets/images/quiz/beagle/beagle_3.jpg"
+    - "lib/assets/images/quiz/chihuahua/chihuahua_1.jpg"
+    - "lib/assets/images/quiz/chihuahua/chihuahua_2.jpg"
+    - "lib/assets/images/quiz/chihuahua/chihuahua_3.jpg"
+    - "lib/assets/images/quiz/dachshund/dachshund_1.jpg"
+    - "lib/assets/images/quiz/dachshund/dachshund_2.jpg"
+    - "lib/assets/images/quiz/dachshund/dachshund_3.jpg"
+    - "lib/assets/images/quiz/maltese/maltese_1.jpg"
+    - "lib/assets/images/quiz/maltese/maltese_2.jpg"
+    - "lib/assets/images/quiz/maltese/maltese_3.jpg"
+    - "lib/assets/images/quiz/papillon/papillon_1.jpg"
+    - "lib/assets/images/quiz/papillon/papillon_2.jpg"
+    - "lib/assets/images/quiz/papillon/papillon_3.jpg"
+    - "lib/assets/images/quiz/poodle/poodle_1.jpg"
+    - "lib/assets/images/quiz/poodle/poodle_2.jpg"
+    - "lib/assets/images/quiz/poodle/poodle_3.jpg"
