@@ -25,10 +25,27 @@ class _QuizScreenState extends State<QuizScreen> {
         const SizedBox(
           height: 50,
         ),
-        Text(
-          '사진 속 강아지의 견종은?',
-          style: GoogleFonts.nanumGothic(
-              fontSize: 25, fontWeight: FontWeight.w600),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(360),
+                  color: Colors.amber),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              margin: const EdgeInsets.only(right: 10),
+              child: Text("1",
+                  style: GoogleFonts.nanumGothic(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                  )),
+            ),
+            Text(
+              '사진 속 강아지의 견종은?',
+              style: GoogleFonts.nanumGothic(
+                  fontSize: 25, fontWeight: FontWeight.w600),
+            ),
+          ],
         ),
         const SizedBox(
           height: 20,
