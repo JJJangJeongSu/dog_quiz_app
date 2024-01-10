@@ -16,7 +16,7 @@ class TitleScreen extends StatelessWidget {
         ),
         const SizedBox(height: 60),
         Text(
-          "개잘알 테스트",
+          "멍잘알 테스트",
           style: GoogleFonts.nanumGothic(
               fontSize: 55, fontWeight: FontWeight.bold),
         ),

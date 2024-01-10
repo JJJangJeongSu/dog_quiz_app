@@ -25,8 +25,10 @@ class _MainFrameState extends State<MainFrame> {
     super.initState();
     // screenCode = 'title-screen';
     // activeScreen = TitleScreen(startQuiz: startQuiz);
-    screenCode = 'result-scren';
-    activeScreen = ResultScreen();
+    screenCode = 'title-screen';
+    activeScreen = TitleScreen(
+      startQuiz: startQuiz,
+    );
   }
 
   @override
@@ -37,6 +39,8 @@ class _MainFrameState extends State<MainFrame> {
       );
     } else if (screenCode == 'quiz-screen') {
       activeScreen = QuizScreen();
+    } else if (screenCode == "result-screen") {
+      activeScreen = ResultScreen();
     }
 
     return MaterialApp(
