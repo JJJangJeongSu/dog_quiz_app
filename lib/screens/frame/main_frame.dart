@@ -1,27 +1,41 @@
+import 'package:dog_quiz_app/screens/quiz_screen.dart';
 import 'package:dog_quiz_app/screens/title_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainFrame extends StatefulWidget {
   const MainFrame({super.key});
   @override
-  State<MainFrame> createState() => _MainFrame();
+  State<MainFrame> createState() => _MainFrameState();
 }
 
-class _MainFrame extends State<MainFrame> {
-  Map<String, Widget> screens = {'title-screen': TitleScreen()};
-
+class _MainFrameState extends State<MainFrame> {
+  Map<String, Widget>? screens;
   Widget? activeScreen;
   String? screenCode;
+
+  void startQuiz() {
+    setState(() {
+      screenCode = 'quiz-screen';
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     screenCode = 'title-screen';
-    activeScreen = screens[screenCode];
+    activeScreen = TitleScreen(startQuiz: startQuiz);
   }
 
   @override
   Widget build(context) {
+    if (screenCode == 'title-screen') {
+      activeScreen = TitleScreen(
+        startQuiz: startQuiz,
+      );
+    } else if (screenCode == 'quiz-screen') {
+      activeScreen = QuizScreen();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -30,7 +44,7 @@ class _MainFrame extends State<MainFrame> {
             Color.fromARGB(244, 254, 223, 47),
             Color.fromARGB(244, 255, 236, 113)
           ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
-          child: Center(child: screens[screenCode]),
+          child: Center(child: activeScreen),
         ),
       ),
     );

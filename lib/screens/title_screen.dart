@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TitleScreen extends StatelessWidget {
-  const TitleScreen({super.key});
+  const TitleScreen({super.key, required this.startQuiz});
+
+  final void Function() startQuiz;
   @override
   Widget build(context) {
     return Column(
@@ -20,7 +22,7 @@ class TitleScreen extends StatelessWidget {
         ),
         const SizedBox(height: 40),
         ElevatedButton(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: ElevatedButton.styleFrom(
                 padding:
                     const EdgeInsets.symmetric(vertical: 5, horizontal: 40)),
