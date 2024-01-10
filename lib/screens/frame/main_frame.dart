@@ -1,4 +1,5 @@
 import 'package:dog_quiz_app/screens/quiz_screen.dart';
+import 'package:dog_quiz_app/screens/result_screen.dart';
 import 'package:dog_quiz_app/screens/title_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +23,10 @@ class _MainFrameState extends State<MainFrame> {
   @override
   void initState() {
     super.initState();
-    screenCode = 'title-screen';
-    activeScreen = TitleScreen(startQuiz: startQuiz);
+    // screenCode = 'title-screen';
+    // activeScreen = TitleScreen(startQuiz: startQuiz);
+    screenCode = 'result-scren';
+    activeScreen = ResultScreen();
   }
 
   @override
