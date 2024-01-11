@@ -15,20 +15,33 @@ class _MainFrameState extends State<MainFrame> {
   Widget? activeScreen;
   String? screenCode;
   late int curNum;
-  dynamic curQuestionSet;
+  late QuestionSet curQuestionSet;
   late List<String> userAnswers;
+
+  void backToTitle() {
+    setState(() {
+      screenCode = 'title-screen';
+    });
+  }
 
   void startQuiz() {
     setState(() {
       curQuestionSet = QuestionSet();
+      curNum = 1;
+
       screenCode = 'quiz-screen';
       userAnswers = [];
     });
   }
 
-  void chooseAnswer() {
+  void chooseAnswer(String selectedAnswer) {
     setState(() {
+      print(userAnswers);
+      userAnswers.add(selectedAnswer);
       curNum += 1;
+      if (curNum == curQuestionSet.curQuestionList.length) {
+        screenCode = 'result-screen';
+      }
     });
   }
 
@@ -51,9 +64,16 @@ class _MainFrameState extends State<MainFrame> {
         startQuiz: startQuiz,
       );
     } else if (screenCode == 'quiz-screen') {
-      activeScreen = QuizScreen();
+      activeScreen = QuizScreen(
+          curQuestionSet: curQuestionSet,
+          curNum: curNum,
+          chooseAnswer: chooseAnswer);
     } else if (screenCode == "result-screen") {
-      activeScreen = ResultScreen();
+      activeScreen = ResultScreen(
+        questionSet: curQuestionSet,
+        backToTitle: backToTitle,
+        userAnswers: userAnswers,
+      );
     }
 
     return MaterialApp(

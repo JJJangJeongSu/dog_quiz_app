@@ -11,17 +11,30 @@ class QuestionSet {
     "웰시코기",
     "파피용"
   ];
+  final Map<String, String> dogEngNames = {
+    "비글": "beagle",
+    "치와와": "chihuahua",
+    "웰시코기": "corgi",
+    "닥스훈트": "dachshund",
+    "말티즈": "maltese",
+    "파피용": "papillon",
+    "푸들": "poodle"
+  };
+
   QuestionSet() {
     dogList = dogNames.toList();
 
     dogList.shuffle();
-    dogList = dogList.sublist(0, 5);
+    dogList = dogList.sublist(0, 7);
 
-    curQuestion = dogList.map((dog) {
+    curQuestionList = dogList.map((dog) {
       int randInt = Random().nextInt(3) + 1;
-      return Question(answer: dog, image: "{$dog}_{$randInt}");
+      return Question(
+          answer: dog,
+          image:
+              "lib/assets/images/quiz/${dogEngNames[dog]}/${dogEngNames[dog]}_$randInt.jpg");
     }).toList();
   }
   late List<String> dogList;
-  late List<Question> curQuestion;
+  late List<Question> curQuestionList;
 }

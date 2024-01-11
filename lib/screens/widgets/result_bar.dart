@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ResultBar extends StatelessWidget {
+  ResultBar(
+      {super.key,
+      required this.questionNum,
+      required this.image,
+      required this.answer,
+      required this.userAnswer});
+
+  int questionNum;
+  String image;
+  String answer;
+  String userAnswer;
+
   @override
   Widget build(context) {
     return Container(
@@ -12,11 +24,12 @@ class ResultBar extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(360),
-              color: Colors.white,
-            ),
+                borderRadius: BorderRadius.circular(360),
+                color: answer == userAnswer
+                    ? Colors.green.shade400
+                    : Colors.red.shade400),
             child: Text(
-              "1",
+              questionNum.toString(),
               style: GoogleFonts.nanumGothic(
                   fontSize: 20, fontWeight: FontWeight.w700),
             ),
@@ -25,26 +38,34 @@ class ResultBar extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 20),
             decoration: const BoxDecoration(color: Colors.white),
             child: Image.asset(
-              'lib/assets/images/logo/dog.png',
+              image,
               width: 70,
-              height: 70,
+              height: 55,
             ),
           ),
-          Column(
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
             children: [
               Text(
-                "말티즈",
+                userAnswer,
                 style: GoogleFonts.nanumGothic(
                     fontSize: 17, fontWeight: FontWeight.w600),
               ),
               const SizedBox(
-                height: 6,
+                height: 2,
               ),
-              Text("비글",
+              Text(answer,
                   style: GoogleFonts.nanumGothic(
-                      fontSize: 17, fontWeight: FontWeight.w600))
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      color: answer == userAnswer
+                          ? Colors.green.shade400
+                          : Colors.red.shade400))
             ],
-          )
+          ))
         ],
       ),
     );
